@@ -105,7 +105,7 @@ sequences and Unicode characters and strings.
 Every transcoding can decode bytes as characters and encode characters as bytes.
 </p>
 <h2>Procedures</h2>
-<div align=left><code>(</a>make-codec <i>string</i>)</code></div>
+<div><code>(</a>make-codec <i>string</i>)</code></div>
 <p>Returns a codec representing the character encoding scheme
 whose standard name is the case-insensitive string <i>string</i>.
 Standard character encoding names for HTML can be found at
@@ -117,9 +117,9 @@ Additional encoding names listed at
 <a href="https://www.iana.org/assignments/character-sets/character-sets.xhtml">
 the IANA page on character sets</a>
 may also be recognized.</p>
-<div align=left><code>(</a>latin-1-codec<i></i>)</code></div>
-<div align=left><code>(</a>utf-8-codec<i></i>)</code></div>
-<div align=left><code>(</a>utf-16-codec<i></i>)</code></div>
+<div><code>(</a>latin-1-codec<i></i>)</code></div>
+<div><code>(</a>utf-8-codec<i></i>)</code></div>
+<div><code>(</a>utf-16-codec<i></i>)</code></div>
 <p>
 These are predefined codecs for the ISO 8859-1, UTF-8,
 and UTF-16 encoding schemes.</p>
@@ -130,12 +130,12 @@ procedure.
 </p>
 <p>
 </p>
-<div align=left><code>(</a>native-eol-style<i></i>)</code>
+<div><code>(</a>native-eol-style<i></i>)</code>
 <p>
 Returns the default end-of-line style of the underlying platform, typically
 <code>lf</code> on Unix and <code>crlf</code> on Windows.
 </p>
-<div align=left><code>(</a>i/o-decoding-error?<i> obj</i>)</code>
+<div><code>(</a>i/o-decoding-error?<i> obj</i>)</code>
 
 <p>
 textual input from a port encounters a sequence of bytes that cannot
@@ -144,30 +144,30 @@ be decoded into a character or string by the port's transcoder.</p>
 When such an exception is raised, the port's position is past
 the invalid encoding.
 </p>
-<div align=left><code>(</a>i/o-encoding-error?<i> obj</i>)</code>
+<div><code>(</a>i/o-encoding-error?<i> obj</i>)</code>
 <p>
 Returns <code>#t</code> if <i>obj</i> is
 an exception raised when one of the operations for
 textual output to a port encounters a character that cannot be
 decoded into bytes by the port's transcoder.</p>
-<div align=left><code>(</a>i/o-encoding-error-char<i> obj</i>)</code>
+<div><code>(</a>i/o-encoding-error-char<i> obj</i>)</code>
 <p>
 Returns the character that could not be encoded
 when the condition <i>obj</i> was signaled.
 </p>
-<div align=left><code>(</a>make-transcoder<i> codec eol-style handling-mode</i>)</code>
+<div><code>(</a>make-transcoder<i> codec eol-style handling-mode</i>)</code>
 <p>
 Returns a transcoder with the behavior specified by its arguments.
 </p>
 <p>
 </p>
-<div align=left><code>(</a>native-transcoder<i></i>)</code>
+<div><code>(</a>native-transcoder<i></i>)</code>
 <p>
 Returns an implementation-dependent transcoder that represents a
 possibly locale-dependent &ldquo;native&rdquo; transcoding.
 This should be equivalent to the transcoder employed by
 Scheme operations that open textual ports.</p>
-<div align=left><code>(<a name="node_idx_650"></a>transcoded-port<i> binary-port transcoder</i>)</code><span style="margin-left: .5em">&zwnj;</span><span style="margin-left: .5em">&zwnj;</span>procedure&nbsp;</div>
+<div><code>(<a name="node_idx_650"></a>transcoded-port<i> binary-port transcoder</i>)</code><span style="margin-left: .5em">&zwnj;</span><span style="margin-left: .5em">&zwnj;</span>procedure&nbsp;</div>
 <p>
 Returns a new textual port with the specified <i>transcoder</i>
 from <i>binary-port</i>.
@@ -185,12 +185,12 @@ after it has been read from or written to.
 It is also an error to read or write on <i>binary-port</i>
 after calling this procedure.
 </p>
-<div align=left><code>(</a>bytevector-&gt;string<i> bytevector transcoder</i>)</code>
+<div><code>(</a>bytevector-&gt;string<i> bytevector transcoder</i>)</code>
 <p>
 Returns the string that results from decoding the
 <i>bytevector</i> according to the input direction of the transcoder.
 </p>
-<div align=left><code>(</a>string-&gt;bytevector<i> string transcoder</i>)</code>
+<div><code>(</a>string-&gt;bytevector<i> string transcoder</i>)</code>
 <p>
 Returns the bytevector that results from encoding the
 <i>string</i> according to the output direction of the transcoder.
