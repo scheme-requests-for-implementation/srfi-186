@@ -2,6 +2,8 @@
 
 ** by John Cowan
 
+Based on R6RS.
+
 
 
 This repository hosts [[https://srfi.schemers.org/srfi-186/][SRFI 186]]: Transcoders and transcoded ports, a [[https://srfi.schemers.org/][Scheme Request for Implementation]].
