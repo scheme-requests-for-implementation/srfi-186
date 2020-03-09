@@ -85,7 +85,7 @@ it is treated as the character U+FFFD (or if that character is
 not representable by the implementation or is not permitted in
 strings, then by the character U+003F (question mark).
 But if the error-handling mode is <code>raise</code>,
-an error satisfying <code>i/o-decoding?</code> is signaled,
+an error satisfying <code>i/o-decoding-error?</code> is signaled,
 an appropriate number of bytes are ignored, and decoding
 continues with the following bytes.</p>
 <p>
@@ -97,7 +97,7 @@ The replacement character is U+FFFD for transcoders whose codec
 can encode this character, but is U+003F (question mark)
 if it cannot.
 But if the error-handling mode is <code>raise</code>, an
-an error satisfying <code>i/o-decoding-error?</code> is raised,
+an error satisfying <code>i/o-encoding-error?</code> is raised,
 and encoding continues with the next character.
 </p>
 <p>
