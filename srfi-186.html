@@ -42,7 +42,7 @@ None at present.
 
 <p>When reading from (or writing to) files, devices, pipes, sockets,
 or other sources (or sinks) of data, it's sometimes useful or necessary
-to handle text files that are encoded different from the system default encoding.</p>
+to handle textual data that are encoded differently from the system default encoding.</p>
 
 <p>This can be done at a level above Scheme ports, but with some
 loss in convenience.  In particular, the high-level Scheme procedures
@@ -113,16 +113,22 @@ Every transcoding can decode bytes as characters and encode characters as bytes.
 <h2>Procedures</h2>
 <div><code>(</a>make-codec <i>string</i>)</code></div>
 <p>Returns a codec representing the character encoding scheme
-whose standard name is the case-insensitive string <i>string</i>.
-Standard character encoding names for HTML can be found at
+whose standard name is the case-insensitive string <i>string</i>.</p>
+<p>Standard character encoding names for HTML can be found at
 <a href="https://encoding.spec.whatwg.org/#names-and-labels">
 the WHATWG encoding specification</a>, and implementations
-should support all of these (note that there are more names
-than encodings).
+should recognize and support all of these.
+There are a total of 39 encodings, which have between them
+218 standard names.  Note that the "replacement" codec
+signals an error whenever it is used.
 Additional encoding names listed at
 <a href="https://www.iana.org/assignments/character-sets/character-sets.xhtml">
 the IANA page on character sets</a>
-may also be recognized.</p>
+may also be recognized and supported.</p>
+<p>If <code>make-codec</code> is called
+on a string that the implementation does not support,
+an error is signaled.</p>
+
 <div><code>(</a>latin-1-codec<i></i>)</code></div>
 <div><code>(</a>utf-8-codec<i></i>)</code></div>
 <div><code>(</a>utf-16-codec<i></i>)</code></div>
@@ -144,6 +150,8 @@ Returns the default end-of-line style of the underlying platform, typically
 <div><code>(</a>i/o-decoding-error?<i> obj</i>)</code>
 
 <p>
+Returns <code>#t</code> if <i>obj</i> is
+an exception raised when one of the operations for
 textual input from a port encounters a sequence of bytes that cannot
 be decoded into a character or string by the port's transcoder.</p>
 <p>
@@ -155,11 +163,11 @@ the invalid encoding.
 Returns <code>#t</code> if <i>obj</i> is
 an exception raised when one of the operations for
 textual output to a port encounters a character that cannot be
-decoded into bytes by the port's transcoder.</p>
-<div><code>(</a>i/o-encoding-error-char<i> obj</i>)</code>
+encoded into bytes by the port's transcoder.</p>
+<div><code>(</a>i/o-encoding-error-char<i> i/o-encoding-condition</i>)</code>
 <p>
 Returns the character that could not be encoded
-when the condition <i>obj</i> was signaled.
+when the condition <i>i/o-encoding-condition</i> was signaled.
 </p>
 <div><code>(</a>make-transcoder<i> codec eol-style handling-mode</i>)</code>
 <p>
