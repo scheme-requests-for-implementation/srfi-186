@@ -10,7 +10,7 @@ This repository hosts [[https://srfi.schemers.org/srfi-186/][SRFI 186]]: Transco
 
 This SRFI is in /draft/ status.
 
-See also [[https://srfi.schemers.org/srfi-181/][SRFI 181: Custom ports]].
+See also [[https://srfi.schemers.org/srfi-80/][SRFI 80: Stream I/O]], [[https://srfi.schemers.org/srfi-81/][SRFI 81: Port I/O]], and [[https://srfi.schemers.org/srfi-181/][SRFI 181: Custom ports]].
 
 The full documentation for this SRFI can be found in the [[https://srfi.schemers.org/srfi-186/srfi-186.html][SRFI Document]].
 
