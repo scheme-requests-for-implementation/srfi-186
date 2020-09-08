@@ -6,11 +6,11 @@ Based on R6RS.
 
 
 
-keywords: [[https://srfi.schemers.org/?keywords=i/o][I/O]]
+keywords: [[https://srfi.schemers.org/?keywords=i/o][I/O]], [[https://srfi.schemers.org/?keywords=superseded][Superseded]]
 
 This repository hosts [[https://srfi.schemers.org/srfi-186/][SRFI 186]]: Transcoders and transcoded ports, a [[https://srfi.schemers.org/][Scheme Request for Implementation]].
 
-This SRFI is in /final/ status.
+This SRFI is in /withdrawn/ status.
 
 See also [[https://srfi.schemers.org/srfi-80/][SRFI 80: Stream I/O]], [[https://srfi.schemers.org/srfi-81/][SRFI 81: Port I/O]], and [[https://srfi.schemers.org/srfi-181/][SRFI 181: Custom ports (including transcoded ports)]].
 
